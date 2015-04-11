@@ -1,0 +1,9 @@
+name: Teams
+author: theminecoder
+version: 1.0
+main: com.amethystmc.uhc.Teams
+#depends: [Skript]
+commands:
+  team: {}
+  teamlock: {}
+  scatterpeoplenow: {}
