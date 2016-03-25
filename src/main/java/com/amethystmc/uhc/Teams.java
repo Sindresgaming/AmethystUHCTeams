@@ -164,7 +164,11 @@ public class Teams extends JavaPlugin implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerFallDamage(EntityDamageEvent event) {
         if (event.getEntity().getType() == EntityType.PLAYER && event.getCause() == EntityDamageEvent.DamageCause.FALL) {
-            if (fallDamageDisabled) event.setCancelled(true);
+            if (fallDamageDisabled) {
+                event.setCancelled(true);
+                // Resets fall distance, otherwise they'll take damage if they don't jump before fallDamageDistabled is false
+                event.getEntity().setFallDistance(0F);
+            }
         }
     }
 
